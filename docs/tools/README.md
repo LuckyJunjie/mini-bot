@@ -2,6 +2,38 @@
 
 > 本目录包含 Mini-Bot 项目开发所需的所有软件工具指南
 
+## 安装状态总览
+
+### ✅ macOS 已安装 (开发工作站)
+
+| 软件 | 版本 | 命令 | 状态 |
+|------|------|------|------|
+| Python 3 | 3.9.6 | `python3 --version` | ✅ |
+| Git | 2.50.1 | `git --version` | ✅ |
+| PlatformIO | 6.1.19 | `pio --version` | ✅ |
+
+**PlatformIO PATH 配置** (如果 `pio` 命令找不到):
+```bash
+export PATH="$HOME/Library/Python/3.9/bin:$PATH"
+# 永久生效:
+echo 'export PATH="$HOME/Library/Python/3.9/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+### ⏳ macOS 需手动安装
+
+| 软件 | 下载地址 | 说明 |
+|------|----------|------|
+| VSCode | https://code.visualstudio.com/Download | 代码编辑器 |
+| Webots | https://github.com/cyberbotics/webots/releases | 机器人仿真 |
+
+### ⏳ 树莓派待安装 (主控)
+
+| 软件 | 说明 |
+|------|------|
+| Ubuntu Server 22.04 | 需烧录到 SD 卡 |
+| ROS2 Humble | 仅 Linux 支持 |
+
 ## 目录结构
 
 | 文件 | 工具 | 用途 |
@@ -70,15 +102,32 @@
 
 ## 安装检查清单
 
-- [ ] macOS/Windows 安装 VSCode
-- [ ] 配置 GitHub SSH Key 或 Token
-- [ ] 安装 Webots 或 Gazebo
-- [ ] 安装 Python 3 和 pip
-- [ ] 烧录树莓派 5 系统 (Ubuntu Server 22.04)
-- [ ] 配置树莓派 SSH 和 WiFi
-- [ ] 安装 ROS2 Humble
-- [ ] 安装 ESP32 开发工具链
-- [ ] 测试开发环境连接
+### macOS (开发工作站) ✅
+
+| 软件 | 状态 | 安装方式 | 备注 |
+|------|------|----------|------|
+| Python 3 | ✅ 已安装 | 系统自带 | Version 3.9.6 |
+| Git | ✅ 已安装 | 系统自带 | Version 2.50.1 |
+| PlatformIO | ✅ 已安装 | pip3 | Version 6.1.19 |
+| VSCode | ⏳ 需手动安装 | 官网下载 | https://code.visualstudio.com/ |
+| Webots | ⏳ 需手动安装 | 官网下载 | https://cyberbotics.com/ |
+| Gazebo | ⏳ 需手动安装 | macOS 不推荐 | 仅 Linux 支持 |
+
+### 树莓派 5 (主控计算机) ⏳
+
+| 软件 | 状态 | 安装方式 |
+|------|------|----------|
+| Ubuntu Server 22.04 | ⏳ 需烧录 | Raspberry Pi Imager |
+| ROS2 Humble | ⏳ 待安装 | apt install |
+| Git | ⏳ 待安装 | apt install |
+| Python 3 | ⏳ 待安装 | 系统自带 |
+
+### ESP32-S3 (底层控制) ⏳
+
+| 软件 | 状态 | 安装方式 |
+|------|------|----------|
+| PlatformIO | ✅ 可用 | Mac 已安装，可在任意平台开发 |
+| ESP32 驱动 | ⏳ 待安装 | USB 连接后自动识别 |
 
 ---
 
